@@ -10,10 +10,7 @@ const ingredients = [
 const ingredientsListEl = document.querySelector('ul#ingredients');
 // console.log(ingredientsListEl);
 
-const ingredientToAdd = ingredients.map(ingredient => {
-  let ingredientsListElItem = document.createElement('li');
-  ingredientsListElItem.classList.add('item');
-  ingredientsListElItem.textContent = ingredient;
-  ingredientsListEl.append(ingredientsListElItem);
-});
+const ingredientToAdd = ingredients.map((ingredient) => `<li class="item">${ingredient}</li>`)
+  .join('');
+ingredientsListEl.innerHTML = ingredientToAdd;
 console.log(ingredientsListEl);
