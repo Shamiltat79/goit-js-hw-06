@@ -1,17 +1,23 @@
 const inputFieldValue = document.querySelector('#validation-input');
 const inputLength = inputFieldValue.dataset.length;
-// console.log(inputFieldValue);
-// console.log(inputLength);
-// console.log(typeof inputLength);   
 const inputLengthToNumber = Number(inputLength);
-// console.log(inputLengthToNumber);
-// console.log(typeof inputLengthToNumber);
-inputFieldValue.addEventListener('blur', counterCharacter);
-function counterCharacter(event) {
-    let currentLength = event.currentTarget.value;
-    if (currentLength.length === inputLengthToNumber) {
-        inputFieldValue.classList.add('valid');
-    }
-    else { inputFieldValue.classList.add('invalid') }
+console.log(inputLengthToNumber);
+
+inputFieldValue.addEventListener('blur', onInputValue)
+
+function onInputValue(event) {
+    const value = event.currentTarget.value
+    // console.log(value);
+    // console.log(value.length);
     
-};
+
+        if (value.length === inputLengthToNumber) {
+            inputFieldValue.classList.add('valid');
+            inputFieldValue.classList.remove('invalid')
+        }
+    if (value.length !== inputLengthToNumber) {
+        inputFieldValue.classList.add('invalid');
+        inputFieldValue.classList.remove('valid')    }
+    };
+
+
