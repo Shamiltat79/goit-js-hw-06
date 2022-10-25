@@ -11,6 +11,7 @@ createBtn.addEventListener('click', createBoxes);
 function getInputAmount(event) {
 return event.currentTarget.value
 };
+
 function createBoxes(amount) {
   amount = Number(input.value);
   for (let i = 0; i < amount; i += 1) {
