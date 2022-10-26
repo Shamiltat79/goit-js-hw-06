@@ -23,9 +23,10 @@ function createBoxes(amount) {
     box.style.backgroundColor = `${getRandomHexColor()}`;
     box.style.marginTop = '20px';
        boxContainer.push(box);
-    boxes.append(...boxContainer);
+    
    
   }
+  boxes.append(...boxContainer);
 }
 
 
