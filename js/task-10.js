@@ -11,18 +11,24 @@ createBtn.addEventListener('click', createBoxes);
 function getInputAmount(event) {
 return event.currentTarget.value
 };
-
+const boxContainer = [];
 function createBoxes(amount) {
   amount = Number(input.value);
+  console.log(amount);
+  
   for (let i = 0; i < amount; i += 1) {
-    const box = document.createElement('div');
+    let box = document.createElement('div');
     box.style.width = `${30 + 10 * i}px`;
     box.style.height = `${30 + 10 * i}px`;
     box.style.backgroundColor = `${getRandomHexColor()}`;
     box.style.marginTop = '20px';
-    boxes.appendChild(box);
+       boxContainer.push(box);
+    boxes.append(...boxContainer);
+   
   }
 }
+
+
 destroyBtn.addEventListener('click', clearInput);
 function clearInput() {
   boxes.innerHTML = '';
